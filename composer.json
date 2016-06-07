@@ -1,6 +1,6 @@
 {
     "name": "nomisoft/royal-mail-tracking-api",
-    "description": "A class to ease development when working with the Royal Mail Tracking API",
+    "description": "A library to ease development when working with the Royal Mail Tracking API",
     "homepage": "https://github.com/nomisoft/royal-mail-tracking-api",
     "authors": [
         {
