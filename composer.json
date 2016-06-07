@@ -1,0 +1,20 @@
+{
+    "name": "nomisoft/royal-mail-tracking-api",
+    "description": "A class to ease development when working with the Royal Mail Tracking API",
+    "homepage": "https://github.com/nomisoft/royal-mail-tracking-api",
+    "authors": [
+        {
+          "name": "Simon Jarvis",
+          "email": "dev@nomisoft.co.uk"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Nomisoft\\RoyalMailTrackingApi\\": "src"
+        }
+    }
+}

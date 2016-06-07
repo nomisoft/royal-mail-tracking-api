@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="TrackingAPIService" targetNamespace="http://www.royalmailgroup.com/api/track/V1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.royalmailgroup.com/api/track/V1" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <wsdl:documentation>Version 1.1.1</wsdl:documentation>
+    <wsdl:types>
+        <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.royalmailgroup.com/WSDLapi/track/V1" xmlns:tns="http://www.royalmailgroup.com/WSDLapi/track/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+            <xs:import namespace="http://www.royalmailgroup.com/api/track/V1" schemaLocation="Tracking_API_V1_1_1.xsd"/>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="getSingleItemHistoryRequest">
+        <wsdl:part element="tns:getSingleItemHistoryRequest" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="getSingleItemHistoryResponse">
+        <wsdl:part element="tns:getSingleItemHistoryResponse" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="getProofOfDeliveryRequest">
+        <wsdl:part element="tns:getProofOfDeliveryRequest" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="getProofOfDeliveryResponse">
+        <wsdl:part element="tns:getProofOfDeliveryResponse" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="getMultiItemSummaryRequest">
+        <wsdl:part element="tns:getMultiItemSummaryRequest" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="getMultiItemSummaryResponse">
+        <wsdl:part element="tns:getMultiItemSummaryResponse" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="getSingleItemSummaryRequest">
+        <wsdl:part element="tns:getSingleItemSummaryRequest" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="getSingleItemSummaryResponse">
+        <wsdl:part element="tns:getSingleItemSummaryResponse" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="faultResponse">
+        <wsdl:part element="tns:exceptionDetails" name="parameters"/>
+    </wsdl:message>
+    <wsdl:portType name="TrackingAPIServicePortType">
+        <wsdl:operation name="getSingleItemHistory">
+            <wsdl:documentation>Provides a history of tracks for a single mail item.</wsdl:documentation>
+            <wsdl:input message="tns:getSingleItemHistoryRequest" wsaw:Action="urn:getSingleItemHistoryRequest"/>
+            <wsdl:output message="tns:getSingleItemHistoryResponse" wsaw:Action="urn:getSingleItemHistoryResponse"/>
+            <wsdl:fault message="tns:faultResponse" name="faultResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getProofOfDelivery">
+            <wsdl:documentation>Provides the details captured at the point of delivery as proof that delivery has occurred. Note that a proof of delivery is only captured by the delivery track for those service offerings that require a signature on delivery. Please also note that for data protection reasons the API does not currently supply the signature image captured at the point of delivery.</wsdl:documentation>
+            <wsdl:input message="tns:getProofOfDeliveryRequest" wsaw:Action="urn:getProofOfDeliveryRequest"/>
+            <wsdl:output message="tns:getProofOfDeliveryResponse" wsaw:Action="urn:getProofOfDeliveryResponse"/>
+            <wsdl:fault message="tns:faultResponse" name="faultResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getMultiItemSummary">
+            <wsdl:input message="tns:getMultiItemSummaryRequest" wsaw:Action="urn:getMultiItemSummaryRequest"/>
+            <wsdl:output message="tns:getMultiItemSummaryResponse" wsaw:Action="urn:getMultiItemSummaryResponse"/>
+            <wsdl:fault message="tns:faultResponse" name="faultResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getSingleItemSummary">
+            <wsdl:documentation>Provides the latest track for a mail item.</wsdl:documentation>
+            <wsdl:input message="tns:getSingleItemSummaryRequest" wsaw:Action="urn:getSingleItemSummaryRequest"/>
+            <wsdl:output message="tns:getSingleItemSummaryResponse" wsaw:Action="urn:getSingleItemSummaryResponse"/>
+            <wsdl:fault message="tns:faultResponse" name="faultResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="TrackingAPIServiceSoap11Binding" type="tns:TrackingAPIServicePortType">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="getSingleItemHistory">
+            <soap:operation soapAction="urn:getSingleItemHistory" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="faultResponse">
+                <soap:fault name="faultResponse" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getProofOfDelivery">
+            <soap:operation soapAction="urn:getProofOfDelivery" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="faultResponse">
+                <soap:fault name="faultResponse" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getMultiItemSummary">
+            <soap:operation soapAction="urn:getMultiItemSummary" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="faultResponse">
+                <soap:fault name="faultResponse" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getSingleItemSummary">
+            <soap:operation soapAction="urn:getSingleItemSummary" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="faultResponse">
+                <soap:fault name="faultResponse" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="TrackingAPIService">
+        <wsdl:port binding="tns:TrackingAPIServiceSoap11Binding" name="TrackingAPIServiceHttpSoap11Endpoint">
+            <soap:address location="https://api.royalmail.net/tracking?client_id=*client_id*&amp;client_secret=*client_secret*"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>
