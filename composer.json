@@ -2,10 +2,12 @@
     "name": "nomisoft/royal-mail-tracking-api",
     "description": "A library to ease development when working with the Royal Mail Tracking API",
     "homepage": "https://github.com/nomisoft/royal-mail-tracking-api",
+    "license": "MIT",
     "authors": [
         {
           "name": "Simon Jarvis",
-          "email": "dev@nomisoft.co.uk"
+          "email": "dev@nomisoft.co.uk",
+          "homepage": "https://www.nomisoft.co.uk"
         }
     ],
     "require": {
